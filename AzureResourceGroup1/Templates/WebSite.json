@@ -34,11 +34,18 @@
       "metadata": {
         "description": "Describes plan's instance count"
       }
+    },
+    "siteName": {
+      "type": "string",
+      "metadata": {
+        "description": "Nombre de la Azure WebApp"
+      }
     }
   },
-  "variables": {
-    "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]"
-  },
+"variables": {
+    "webSiteName": "[parameters('siteName')]"
+    },
+
   "resources": [
     {
       "apiVersion": "2015-08-01",
